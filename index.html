@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://openlayers.org/en/v3.20.1/css/ol.css" type="text/css">
+  <script
+    src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+  <script src="https://openlayers.org/en/v3.20.1/build/ol.js"></script>
+  <title>Wlisses Portifolio</title>
+</head>
+<style>
+  a.skiplink {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  a.skiplink:focus {
+    clip: auto;
+    height: auto;
+    width: auto;
+    background-color: #fff;
+    padding: 0.3em;
+  }
+
+  #map {
+    width: 300px;
+    height: 200px;
+  }
+
+  #map:focus {
+    outline: #4A74A8 solid 0.15em;
+  }
+</style>
+
+<body>
+  <ul>
+    <li>Nome: Wlisses Fernando</li>
+    <li>Data de nascimento: 19/02/1991</li>
+    <li>
+      Localização:
+      <div id="map" class="map" tabindex="0"></div>
+      <p>São José da Lapa-MG</p>
+    </li>
+  </ul>
+  <a class="skiplink" href="#map">to go map</a>
+  <!-- <button id="zoom-out">Zoom out</button>
+  <button id="zoom-in">Zoom in</button> -->
+
+  <script>
+    function viewMap(latitude, longitude) {
+      let map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'map',
+        view: new ol.View({
+          center: ol.proj.fromLonLat([latitude, longitude]),
+          zoom: 15
+        })
+      });
+    }
+    viewMap(-43.9600, -19.6990);
+    // document.getElementById('zoom-out').onclick = function () {
+    //   var view = map.getView();
+    //   var zoom = view.getZoom();
+    //   view.setZoom(zoom - 1);
+    // };
+
+    // document.getElementById('zoom-in').onclick = function () {
+    //   var view = map.getView();
+    //   var zoom = view.getZoom();
+    //   view.setZoom(zoom + 1);
+    // };
+
+    function detectedLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          console.log(latitude)
+        })
+      }
+    }
+    detectedLocation();
+
+  </script>
+</body>
+
+</html>
