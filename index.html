@@ -14,14 +14,28 @@
 
 <body>
   <div>
+    <a id="link_whatsapp" href="https://api.whatsapp.com/send?phone=998566526" target="_blank">
+      <img src="./images/icon-zap-canva.png" alt="ícone do whatsapp">
+    </a>
     <div class="container_my_informations">
       <img id="my_photo" src="./images/my_photo.jpg" alt=" foto de wlisses">
       <ul class="list_informations">
         <li id="my_name">Wlisses Fernando</li>
-        <li>Data de nascimento: 19/02/1991</li>
+        <li><strong>Data de nascimento:</strong> 19/02/1991</li>
         <li>
-          <p>Localização:</p>
-          <p>São José da Lapa-MG</p>
+          <strong>Localização:</strong>Chácaras Reunidas São Vicente (Cachoeira), São José da Lapa-MG
+        </li>
+        <li><strong>Instituição de Ensino:</strong> Trybe <img id="trybe_icon" src="./images/trybe_icon.webp"
+            alt="ícone da instuição de ensino Trybe"></li>
+        <li><strong>Competências:</strong>
+          <div class="container_skills_images">
+            <img src="./images/html-css-javascript.jpg" alt="">
+            <img src="./images/node_express.png" alt="">
+            <img src="./images/react_symbol.webp" alt="">
+            <img src="./images/sequelize_symbol.png" alt="">
+            <img src="./images/sql_symbol.png" alt="">
+            <img src="./images/typescript_symbol.png" alt="">
+          </div>
         </li>
       </ul>
     </div>
@@ -46,7 +60,7 @@
         })
       });
     }
-    viewMap(-43.9600, -19.6990);
+    viewMap(-43.9700, -19.7100);
     // document.getElementById('zoom-out').onclick = function () {
     //   var view = map.getView();
     //   var zoom = view.getZoom();
