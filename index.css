@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container_my_informations {
+  display: flex;
+  padding: 10px;
+}
+
+.list_informations {
+  list-style-type: none;
+}
+
+.list_informations li {
+  margin-bottom: 8px;
+}
+
+#my_name {
+  border: 2px solid rgb(5, 131, 62);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#my_photo {
+  width: 370px;
+  height: 370px;
+  margin-right: 50px;
+  border-radius: 10px;
+}
+
+#map {
+  width: 600px;
+  height: 400px;
+  margin-bottom: 200px;
+  margin-left: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#map:focus {
+  outline: #4A74A8 solid 0.15em;
+}
